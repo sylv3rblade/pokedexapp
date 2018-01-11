@@ -14,7 +14,10 @@ module Pokeapi
     PARTIAL_URL = 'pokemon'.freeze
 
     def self.list
-      get(PARTIAL_URL)
+      result = get(PARTIAL_URL)
+      # clean this up later
+      result['results'].each { |x| x['id'] = x['url'].split('/').last }
+      result
     end
 
     def self.show(id)
