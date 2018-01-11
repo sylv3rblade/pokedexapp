@@ -1,46 +1,18 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from 'react-dom'
+import { createStore, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux'
+import { _ } from 'lodash'
+import thunk from 'redux-thunk';
 
-const Wrapper = props => {
-  return (
-    <div>
-      <div>
-        <PokemonLineUp />
-        <PokemonData />
-      </div>
-      <div>
-        <PokemonSearch />
-      </div>
-    </div>
-  )
-}
+import App from './components/App'
+import pokemonApp from './reducers'
 
-const PokemonLineUp = props => (
-  <div>
-    Pokemon Lineup <br />
-    List them here
-  </div>
+const store = createStore(pokemonApp, applyMiddleware(thunk))
+
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
 )
-
-const PokemonSearch = props => (
-  <div>
-    Pokemon Search
-    <br />
-    Search able data here
-  </div>
-)
-
-const PokemonData = props => (
-  <div>
-    Pokemon Data
-    <br />
-    Display Data here
-  </div>
-)
-
-document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    <Wrapper />,
-    document.body.appendChild(document.createElement('div')),
-  )
-})

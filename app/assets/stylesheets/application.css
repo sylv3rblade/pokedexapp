@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
+.center-text{
+    text-align: center;
+}
+
+.main-content{
+    min-height: 200px;
+}
+
+.pokemonList .button, .roster .button{
+    padding: 0 10px;
+    font-size: 10px;
+    margin: 0 5px;
+}
+
+.roster{
+    margin:0 !important;
+}
+
+.rosterSprite{
+    margin: auto;
+    width: 96px;
+    height: 96px;
+    text-align: center;
+    display: -webkit-box;
+}
