@@ -1,24 +1,15 @@
-# README
+# How to Run this app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- clone from repo
+- make sure yarn is installed (brew install yarn)
+- bundle 
+- run the rails server using `rails s`
+- run the webpack using `./bin/webpack-dev-server`
 
-Things you may want to cover:
+# known bugs
+- viewPokemon still doesn't go through the reducer
+- still need a better guard for the reducer on addPokemon
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# other notes
+- capitalize needs to be moved to a global function or should I just extend it to the String object in js
+- add caching to responses from api
